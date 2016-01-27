@@ -9,6 +9,7 @@
 os_command_line:
 	call os_clear_screen
 
+
 	mov si, version_msg
 	call os_print_string
 	mov si, help_text
@@ -563,7 +564,7 @@ exit:
 	writefail_msg		db 'Could not write file. Write protected or invalid filename?', 13, 10, 0
 	exists_msg		db 'Target file already exists!', 13, 10, 0
 
-	version_msg		db 'MikeOS ', MIKEOS_VER, 13, 10, 0
+	version_msg		db 'EricOS ', MIKEOS_VER, 13, 10, 0
 
 	exit_string		db 'EXIT', 0
 	help_string		db 'HELP', 0
@@ -580,6 +581,7 @@ exit:
 
 	kern_file_string	db 'KERNEL', 0
 	kern_warn_msg		db 'Cannot execute kernel file!', 13, 10, 0
+
 
 
 ; ==================================================================

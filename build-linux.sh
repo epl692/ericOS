@@ -16,10 +16,10 @@ if test "`whoami`" != "root" ; then
 fi
 
 
-if [ ! -e disk_images/mikeos.flp ]
+if [ ! -e disk_images/EricOS.flp ]
 then
 	echo ">>> Creating new MikeOS floppy image..."
-	mkdosfs -C disk_images/mikeos.flp 1440 || exit
+	mkdosfs -C disk_images/EricOS.flp 1440 || exit
 fi
 
 
@@ -49,14 +49,14 @@ cd ..
 
 echo ">>> Adding bootloader to floppy image..."
 
-dd status=noxfer conv=notrunc if=source/bootload/bootload.bin of=disk_images/mikeos.flp || exit
+dd status=noxfer conv=notrunc if=source/bootload/bootload.bin of=disk_images/EricOS.flp || exit
 
 
 echo ">>> Copying MikeOS kernel and programs..."
 
 rm -rf tmp-loop
 
-mkdir tmp-loop && mount -o loop -t vfat disk_images/mikeos.flp tmp-loop && cp source/kernel.bin tmp-loop/
+mkdir tmp-loop && mount -o loop -t vfat disk_images/EricOS.flp tmp-loop && cp source/kernel.bin tmp-loop/
 
 cp programs/*.bin programs/*.bas programs/sample.pcx tmp-loop
 
@@ -71,8 +71,8 @@ rm -rf tmp-loop
 
 echo ">>> Creating CD-ROM ISO image..."
 
-rm -f disk_images/mikeos.iso
-mkisofs -quiet -V 'MIKEOS' -input-charset iso8859-1 -o disk_images/mikeos.iso -b mikeos.flp disk_images/ || exit
+rm -f disk_images/EricOS.iso
+mkisofs -quiet -V 'ERICOS' -input-charset iso8859-1 -o disk_images/EricOS.iso -b EricOS.flp disk_images/ || exit
 
 echo '>>> Done!'
 

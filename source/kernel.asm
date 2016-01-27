@@ -198,10 +198,10 @@ option_screen:
 
 	; Data for the above code...
 
-	os_init_msg		db 'Welcome to MikeOS', 0
+	os_init_msg		db 'Welcome to EricOS', 0
 	os_version_msg		db 'Version ', MIKEOS_VER, 0
 
-	dialog_string_1		db 'Thanks for trying out MikeOS!', 0
+	dialog_string_1		db 'Thanks for trying out EricOS!', 0
 	dialog_string_2		db 'Please select an interface: OK for the', 0
 	dialog_string_3		db 'program menu, Cancel for command line.', 0
 
@@ -346,8 +346,8 @@ not_bas_extension:
 	bin_ext			db 'BIN'
 	bas_ext			db 'BAS'
 
-	kerndlg_string_1	db 'Cannot load and execute MikeOS kernel!', 0
-	kerndlg_string_2	db 'KERNEL.BIN is the core of MikeOS, and', 0
+	kerndlg_string_1	db 'Cannot load and execute EricOS kernel!', 0
+	kerndlg_string_2	db 'KERNEL.BIN is the core of EricOS, and', 0
 	kerndlg_string_3	db 'is not a normal program.', 0
 
 	ext_string_1		db 'Invalid filename extension! You can', 0

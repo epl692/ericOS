@@ -39,3 +39,14 @@ Have fun, and see the [website](http://mikeos.sourceforge.net)
 
 [Mike Saunders](mailto:okachi@gmail.com)
 
+Notes
+-----
+
+Colors
+WRGBWRGB
+11010000b = Purple
+01000000b = Red
+00100000b = Green
+00010000b = Blue
+00110000b = Teal
+01100000b = Gold
