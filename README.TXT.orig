@@ -1,0 +1,83 @@
+<<<<<<< HEAD
+==================================================================
+MikeOS -- Open source 16-bit operating system for x86 PCs
+Copyright (C) 2006 - 2014 MikeOS Developers -- see doc/LICENSE.TXT
+==================================================================
+
+
+MikeOS is a 16-bit real mode operating system for x86-compatible PCs, 
+written entirely in assembly language, which boots from a floppy disk,
+CD-ROM or USB key. It features a text-based dialog-driven user
+interface, a command-line, support for FAT12 (MS-DOS-like) floppy
+disks, sound (PC speaker), text editor, BASIC interpreter and more.
+The kernel includes over 60 system calls.
+
+MikeOS is a learning tool for those wishing to understand simple OS 
+construction and x86 assembly. Quick getting-started guide: MikeOS can 
+run from a floppy disk or CD-ROM, either on an emulator or a real PC. 
+See the disk_images/ directory for files that you can write to the 
+appropriate media or boot in, for instance, VMware, QEMU or VirtualBox.
+
+You can find the source code in the source/ directory, and sample 
+programs (included on the disk images) in the programs/ directory.
+See the doc/ directory for more info, including:
+
+ # handbook-user.html -- How to run and use MikeOS
+
+ # handbook-appdev-basic.html -- Writing software in BASIC
+ # handbook-appdev-asm.html -- Writing software in assembly
+ # handbook-sysdev.html -- Building and modifying the OS
+
+ # LICENSE.TXT -- The open source, BSD-like license
+ # CHANGES.TXT -- Detailed list of changes in previous releases
+ # CREDITS.TXT -- People involved in the project
+
+Have fun, and see the website at http://mikeos.sourceforge.net
+
+ -- Mike Saunders (okachi@gmail.com)
+
+
+==================================================================
+
+=======
++--------------------------+
+| Tachyon Operating System |
++--------------------------+
+
+Tachyon Operating System or TachyonOS for short is a 16-bit x86 operating system.
+Copyright (C) TachyonOS Developers 2013
+
+Aims:
+ * To provide a small and fast hobby operating system with a variety of external programs.
+ * Create a more up-to-date branch of MikeOS. 
+	Binary compatibility will be maintained as much as possible while merging new features.
+ * Have all my MikeOS application work without kernel mods.
+
+See the commandline guide in the 'doc' folder for information on the commands.
+TachyonOS uses the MikeOS API. Information can be found in 'doc/MikeOS'.
+
+Building
+========
+Run the build script approprate for your operating system to create disk images, i.e. 'build-linux.sh'.
+Linux, OSX and OpenBSD users must be logged into as root. 
+
+Requirements:
+ - NASM
+ - ImDisk (Windows Only)
+ - PartCopy (Windows Only)
+ - genisoimage (Non-Windows Only but should be installed)
+
+A disk image will be created in the 'disk_images'
+folder. This script will compile the kernel and all assembly files in the 'programs' folder.
+A floppy disk and ISO image will be create with the bootload, kernel, BASIC programs and binaries 
+from 'programs' and all files from 'diskfiles'.
+
+
+Running
+=======
+You can use the disk images generated to run MikeOS in an emulator (you may need to change the file
+extention of the floppy disk image 'tachyonos.flp' to .img or .ima to run in some emulators) or you
+can write to a physical medium such as a floppy disk, CDROM or flash drive (via floppy emulation)
+and boot from that. Keep in mind CD's are read only. Linux users with QEMU installed can simple run
+the shell script 'test-linux.sh'.
+>>>>>>> 55297c6c2f817b36a2abc9258d5de952acb9a6c8
