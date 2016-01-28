@@ -181,6 +181,8 @@ option_screen:
 	mov cx, 10011111b		; Colour: white text on light blue
 	call os_draw_background
 
+    call datetime
+
 	mov ax, dialog_string_1		; Ask if user wants app selector or command-line
 	mov bx, dialog_string_2
 	mov cx, dialog_string_3
@@ -212,6 +214,7 @@ app_selector:
 	mov bx, os_version_msg
 	mov cx, 10011111b		; Colour: white text on light blue
 	call os_draw_background
+	call datetime
 
 	call os_file_selector		; Get user to select a file, and store
 					; the resulting string location in AX
@@ -389,3 +392,20 @@ not_bas_extension:
 ; END OF KERNEL
 ; ==================================================================
 
+;-------------------------------------------------------------
+datetime:
+    mov bx, tmpstring
+	call os_get_time_string
+	mov si, bx
+	call os_print_string
+	call os_print_newline
+
+	mov bx, tmpstring
+	call os_get_date_string
+	mov si, bx
+	call os_print_string
+	call os_print_newline
+    ret
+    
+    tmpstring db 'BLAHBLAHBLAH',0
+;-------------------------------------------------------------    
