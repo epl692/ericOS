@@ -4,6 +4,9 @@ build:
 clean:
 	rm -f ~/Workspaces/nasm/mikeOS/disk_images/*.iso
 	rm -f ~/Workspaces/nasm/mikeOS/disk_images/*.flp
+	rm -f ~/Workspaces/nasm/mikeOS/source/*.bin
+	rm -f ~/Workspaces/nasm/mikeOS/programs/*.bin
+	rm -f ~/Workspaces/nasm/mikeOS/source/bootload/*.bin
 	rm -f ~/Web/*.iso
 	rm -f ~/Web/*.flp
 
