@@ -1,7 +1,7 @@
-MikeOS
+EricOS
 ======
 
-Open source 16-bit operating system for x86 PCs
+Open source 16-bit operating system for x86 PCs based on MikeOS
 -----------------------------------------------
 
 ```
