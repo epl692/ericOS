@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script assembles the MikeOS bootloader, kernel and programs
+# This script assembles the EricOS bootloader, kernel and programs
 # with NASM, and then creates floppy and CD images (on Linux)
 
 # Only the root user can mount the floppy disk image as a virtual
@@ -18,7 +18,7 @@ fi
 
 if [ ! -e disk_images/EricOS.flp ]
 then
-	echo ">>> Creating new MikeOS floppy image..."
+	echo ">>> Creating new EricOS floppy image..."
 	mkdosfs -C disk_images/EricOS.flp 1440 || exit
 fi
 
@@ -28,7 +28,7 @@ echo ">>> Assembling bootloader..."
 nasm -O0 -w+orphan-labels -f bin -o source/bootload/bootload.bin source/bootload/bootload.asm || exit
 
 
-echo ">>> Assembling MikeOS kernel..."
+echo ">>> Assembling EricOS kernel..."
 
 cd source
 nasm -O0 -w+orphan-labels -f bin -o kernel.bin kernel.asm || exit
@@ -52,7 +52,7 @@ echo ">>> Adding bootloader to floppy image..."
 dd status=noxfer conv=notrunc if=source/bootload/bootload.bin of=disk_images/EricOS.flp || exit
 
 
-echo ">>> Copying MikeOS kernel and programs..."
+echo ">>> Copying EricOS kernel and programs..."
 
 rm -rf tmp-loop
 
