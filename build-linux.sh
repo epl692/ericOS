@@ -69,10 +69,10 @@ umount tmp-loop || exit
 rm -rf tmp-loop
 
 
-echo ">>> Creating CD-ROM ISO image..."
+#echo ">>> Creating CD-ROM ISO image..."
 
-rm -f disk_images/EricOS.iso
-mkisofs -quiet -V 'ERICOS' -input-charset iso8859-1 -o disk_images/EricOS.iso -b EricOS.flp disk_images/ || exit
+#rm -f disk_images/EricOS.iso
+#mkisofs -quiet -V 'ERICOS' -input-charset iso8859-1 -o disk_images/EricOS.iso -b EricOS.flp disk_images/ || exit
 
 echo '>>> Done!'
 

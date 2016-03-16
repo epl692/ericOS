@@ -72,7 +72,19 @@ get_cmd:				; Main processing loop
 	call os_string_compare
 	jc near clear_screen
 
+	mov di, clear_string		; 'CLEAR' entered?
+	call os_string_compare
+	jc near clear_screen
+
 	mov di, dir_string		; 'DIR' entered?
+	call os_string_compare
+	jc near list_directory
+
+	mov di, ls_string		; 'LS' entered?
+	call os_string_compare
+	jc near list_directory
+
+	mov di, lc_string		; 'LC' entered?
 	call os_string_compare
 	jc near list_directory
 
@@ -557,7 +569,7 @@ exit:
 
 	prompt			db '> ', 0
 
-	help_text		db 'Commands: DIR, COPY, REN, DEL, CAT, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
+	help_text		db 'Commands: DIR, LS, LC, COPY, REN, DEL, CAT, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
 	invalid_msg		db 'No such command or program', 13, 10, 0
 	nofilename_msg		db 'No filename or not enough filenames', 13, 10, 0
 	notfound_msg		db 'File not found', 13, 10, 0
@@ -569,7 +581,10 @@ exit:
 	exit_string		db 'EXIT', 0
 	help_string		db 'HELP', 0
 	cls_string		db 'CLS', 0
+	clear_string		db 'CLEAR', 0
 	dir_string		db 'DIR', 0
+	ls_string		db 'LS', 0
+	lc_string		db 'LC', 0
 	time_string		db 'TIME', 0
 	date_string		db 'DATE', 0
 	ver_string		db 'VER', 0
